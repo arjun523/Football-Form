@@ -1,2 +1,3 @@
-# Football-Form
-It's a football registration form
+# Football Registration Form
+
+Football Registration Form is a registration form which helps in registering a new user.
