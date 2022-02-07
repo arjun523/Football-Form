@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <title>Football Registration Form</title>
+    <style>
+    .red{
+      color: red;
+    }
+    .invalid{
+      width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: #dc3545;
+    }
+    </style>
+</head>
+
+<body>
+  <div class="container" style="background-color: rgb(146, 214, 219);">
+    <div class="jumbotron text-center my-2">
+      <h1>Football Registration Form</h1>
+    </div>
+    
+    <form action="#" autocomplete="off" >
+      <div class="container border" style="background-color: white;" >
+        <!-- Row 1st of 2 columns-->
+        <div class="row row-cols-3">
+          <div class="col border">
+            <label for="username">USER NAME <span class=red>*</span> </label>
+            <input type="text" class="form-control" name="username" id="username"   placeholder="Enter user name"
+            required />
+            <br>
+          </div>
+          <div class="col border">
+            <label for="firstname">FIRST NAME <span class=red>*</span> </label>
+            <input type="text" class="form-control" name="firstname" id="firstname"  placeholder="What is your first name?"
+            required />
+            <span class="invalid" id = "fname_error">
+            </span>
+    
+          </div>
+          <div class="col border">
+            <label for="firstname">LAST NAME</label>
+            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="What is your last name?" />
+            <span class="invalid" id = "lname_error">
+            </span>
+          </div>
+        </div>
+        <!-- Row 2nd of 3 columns -->
+        <div class="row row-cols-3">
+          <div class="col border">
+            <label for="phonenumber">PHONE NUMBER <span class=red>*</span></label>
+            <div class="input-group mb-4">
+              <select name="countrycode" class="form-select form-field" id="countrycode"> 
+                <option value="none" >Country Code</option>
+              </select>
+              <input type="text" class="form-control w-75" name="phonenumber" id="phonenumber"
+              placeholder="What is the best # to reach you?" required>
+              <span class="invalid" id = "pnumber_error">
+              </span>
+            </div>
+          </div>
+          
+          <div class="col  border">
+            <div class="d-flex justify-content-between">
+              <label class="form-check-label" for="email">EMAIL <span class=red>*</span></label>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="emailon" />
+              </div></div>
+              <input type="email" class="form-control" name="email" id="email" placeholder="What is your email address?"
+              required disabled />
+              <span class="invalid" id = "email_error">
+              </span>
+            </div>
+            <div class="col border">
+              <label for="agegroup">AGE GROUP <span class=red>*</span></label>
+              <select class="form-select" name="agegroup" id="agegroup" required>
+                <option value="15-19">15-19 years</option>
+                <option value="20-24" selected>20-24 years</option>
+                <option value="25-29">25-29 years</option>
+                <option value="30-34">30-34 years</option>
+              </select>
+            </div>
+          </div>
+          <!-- Row 3rd of 4 columns -->
+          <div class="row row-cols-4">
+            <div class="col border">
+              <label for="desired team" required>DESIRED TEAM <span class=red>*</span></label><br /><br>
+              <input type="radio" class="form-check-input" name="desired team" id="CHELSEA" value="CHELSEA" required />
+              <label for="CHELSEA">CHELSEA</label><br /><br>
+              <input type="radio" class="form-check-input" name="desired team" id="MANCHESTER UNITED"
+              value="MANCHESTER UNITED" />
+              <label for="MANCHESTER UNITED">MANCHESTER UNITED</label><br /><br>
+              <input type="radio" class="form-check-input" name="desired team" id="LIVERPOOL" value="LIVERPOOL" />
+              <label for="LIVERPOOL">LIVERPOOL</label><br /><br>
+              <input type="radio" class="form-check-input" name="desired team" id="BARCELONA" value="BARCELONA" />
+              <label for="BARCELONA">BARCELONA</label><br /><br>
+            </div>
+            <div class="col border">
+              <label for="desiredposition">DESIRED POSITION <span class=red>*</span></label><br /><br>
+              <input type="checkbox" class="form-check-input" name="desiredpositions[]" id="GOAL KEEPER" />
+              <label for="GOAL KEEPER">GOAL KEEPER</label><br /><br>
+              <input type="checkbox" class="form-check-input" name="desiredpositions[]" id="OFFENSIVE" />
+              <label for="OFFENSIVE">OFFENSIVE</label><br /><br>
+              <input type="checkbox" class="form-check-input" name="desiredpositions[]" id="DEFENSIVE" />
+              <label for="DEFENSIVE">DEFENSIVE</label><br /><br>
+              <input type="checkbox" class="form-check-input" name="desiredpositions[]" id="RECEIVER" />
+              <label for="RECEIVER">RECEIVER</label><br>
+              <span class="invalid" id = "desiredpos_error">
+              </span>
+            </div>
+        <div class="col border">
+          <label for="address">ADDRESS</label><br />
+          <textarea name="address" class="form-control" id="address" cols="30" rows="8"></textarea>
+        </div>
+        <div class="col border">
+          <label for="pincode">PIN CODE</label><br />
+          <input type="number" class="form-control" name="" id="pincode" placeholder="Enter your Pin code" />
+          <span class="invalid" id = "pin_error">
+          </span>
+        </div>
+      </div>
+      <div class="row row-cols-3 my-4">
+        <div class="col"></div>
+        <div class="col text-center">
+          <label for="country">COUNTRY <span class=red>*</span></label>
+          <select name="country" class="form-select" id="country">
+            <option value="none" selected id="no_country">Select country</option>
+          </select>
+          <span class="invalid" id = "country_error">
+          </span>
+        </div>
+      </div>
+      <div class="row row-cols-3 my-4">
+        <div class="col"></div>
+        <div class="col text-center">
+          <label for="country">STATE <span class=red>*</span></label>
+          <select name="state" class="form-select sm" id="state">
+            <option value="none" selected>Select State</option>
+          </select>
+          <span class="invalid" id = "state_error">
+          </span>
+        </div>
+      </div>
+      <div class="row row-cols-3 my-4">
+        <div class="col"></div>
+        <div class="col text-center">
+          <label for="city">CITY <span class=red>*</span></label>
+          <select name="city" class="form-select" id="city">
+            <option value="none" selected>Select City</option>
+          </select>
+          <span class="invalid" id = "city_error">
+          </span>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <input type="submit" class="btn btn-primary " value="submit" id="submit" disabled/>
+        <span class="invalid" id = "submit_error">
+        </span>
+      </div>
+    </form>
+  </div>
+  <script src="app.js"></script>
+  <script src="validations.js"></script>
+</body>
+
+</html>
