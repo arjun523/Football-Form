@@ -54,6 +54,7 @@ username.oninput = function () {
   else {
     document.getElementById("uname_error").innerHTML =
       "";
+    clearTimeout(debounce_time);
     debounce_time = setTimeout(() => {
       getuser(username);
     }, 1000);
