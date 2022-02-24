@@ -1,5 +1,5 @@
 function registeruser() {
-  fetch("/hello", {
+  fetch("/form", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ function registeruser() {
 
 function getuser(username) {
   //debugger;
-  fetch(`/hello?username=${username.value}`)
+  fetch(`/form?username=${username.value}`)
     .then((response) => response.json())
     .then((data) => {
       if (!data.status) {
@@ -54,7 +54,7 @@ username.oninput = function () {
   else {
     document.getElementById("uname_error").innerHTML =
       "";
-    clearTimeout(debounce_time);
+    clearTimeout(debounce_time)
     debounce_time = setTimeout(() => {
       getuser(username);
     }, 1000);
@@ -63,7 +63,7 @@ username.oninput = function () {
 };
 
 function updateuser(username) {
-  fetch(`/hello?username=${username.value}`, {
+  fetch(`/form?username=${username.value}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
