@@ -1,0 +1,21 @@
+# This workflow will build a Java project with Gradle
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+on:
+  pull_request:
+  issue_comment:
+jobs:
+  pr_agent_job:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      contents: write
+    name: Run pr agent on every pull request, respond to user comments
+    steps:
+      - name: PR Agent action step
+        id: pragent
+        uses: Codium-ai/pr-agent@main
+        env:
+          OPENAI_KEY: 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
+          GITHUB_TOKEN: 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
