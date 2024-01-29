@@ -122,6 +122,14 @@ public class Form extends HttpServlet {
             e.printStackTrace();
         }
     }
+    
+    public boolean validatePlayer(){
+
+        if(player.getUsername().isEmpty() || player.getFirstname().isEmpty() || player.getLastname().isEmpty() || player.getPcode().isEmpty() || player.getPhone().isEmpty() || player.getEmail().isEmpty() || player.getAgegroup().isEmpty() || player.getDesiredteam().isEmpty() || player.getDesired_positions().isEmpty() || player.getAddress().isEmpty() || player.getPin().isEmpty() || player.getCountry().isEmpty() || player.getState().isEmpty() || player.getCity().isEmpty(){
+            return false;
+        }
+        return true;
+    }
 
 //    POST method for data insertion
     @Override

@@ -17,5 +17,8 @@ jobs:
         id: pragent
         uses: Codium-ai/pr-agent@main
         env:
-          OPENAI_KEY: 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
-          GITHUB_TOKEN: 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
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_action.auto_review: "true" # enable\disable auto review
+          github_action.auto_describe: "true" # enable\disable auto describe
+          github_action.auto_improve: "false" # enable\disable auto improve
